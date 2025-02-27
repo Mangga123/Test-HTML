@@ -1,23 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const boxes = document.querySelectorAll(".box");
-    let currentIndex = 0;
+let slides = document.querySelectorAll(".slide");
+let index = 0;
 
-    function showBox(index) {
-        boxes.forEach((box, i) => {
-            if (i === index) {
-                box.classList.add("active"); // Fade in
-            } else {
-                box.classList.remove("active"); // Fade out
-            }
-        });
-    }
+function showSlides() {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+    });
 
-    function nextBox() {
-        boxes[currentIndex].classList.remove("active"); // Hilangkan kotak sekarang
-        currentIndex = (currentIndex + 1) % boxes.length; // Pindah ke kotak berikutnya
-        boxes[currentIndex].classList.add("active"); // Munculkan kotak baru
-    }
+    slides[index].classList.add("active");
+    index = (index + 1) % slides.length;
+}
 
-    showBox(currentIndex); // Tampilkan kotak pertama saat halaman dimuat
-    setInterval(nextBox, 3000); // Ganti kotak setiap 3 detik
-});
+setInterval(showSlides, 3000); // Ganti gambar setiap 3 detik
+showSlides(); // Tampilkan slide pertama saat halaman dimuat
