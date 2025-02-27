@@ -3,73 +3,38 @@ body {
     font-family: Arial, sans-serif;
     background-color: #33444a;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto; /* Aktifkan scroll ke bawah */
+}
+
+.header-text {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: pink;
+    text-align: center;
 }
 
 .scroll-container {
-    width: 100%;
-    max-width: 400px; /* Lebih kecil */
-    overflow: hidden;
-    white-space: nowrap;
     display: flex;
+    flex-direction: column; /* Menyusun gambar secara vertikal */
     align-items: center;
-    justify-content: center;
-    position: relative;
+    gap: 20px; /* Jarak antar gambar */
+    padding-bottom: 20px;
 }
 
 .box {
-    min-width: 80%; /* Ukuran lebih kecil */
-    height: 250px; /* MENINGGIKAN GAMBAR */
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px; /* Ukuran teks lebih kecil */
-    font-weight: bold;
-    color: white;
-    margin: 0 5px;
+    width: 80%; /* Lebar gambar agar responsif */
+    max-width: 400px;
+    height: auto;
     border-radius: 10px;
     overflow: hidden;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
 }
 
 .box img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
-
-.box.active {
-    display: flex;
-    opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .scroll-container {
-        max-width: 300px; /* Lebih kecil di HP */
-    }
-    .box {
-        height: 230px; /* MENINGGIKAN GAMBAR UNTUK HP */
-    }
-}
-.title {
-    text-align: center;
-    font-size: 24px;
-    color: pink;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-.header-text {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 24px;
-    font-weight: bold;
-    color: pink;
-    text-align: center;
-}
-
