@@ -22,7 +22,7 @@ body {
 
 .box {
     min-width: 80%; /* Ukuran lebih kecil */
-    height: 180px; /* Tinggi lebih kecil */
+    height: 250px; /* MENINGGIKAN GAMBAR */
     display: none;
     align-items: center;
     justify-content: center;
@@ -52,6 +52,6 @@ body {
         max-width: 300px; /* Lebih kecil di HP */
     }
     .box {
-        height: 150px; /* Lebih kecil di HP */
+        height: 230px; /* MENINGGIKAN GAMBAR UNTUK HP */
     }
 }
