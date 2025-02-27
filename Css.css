@@ -20,7 +20,7 @@ body {
 
 .box {
     min-width: 300px;
-    height: 200px;
+    height: 600px;
     display: none; /* Semua box awalnya tersembunyi */
     align-items: center;
     justify-content: center;
