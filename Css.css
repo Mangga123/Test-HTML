@@ -55,3 +55,11 @@ body {
         height: 230px; /* MENINGGIKAN GAMBAR UNTUK HP */
     }
 }
+.title {
+    text-align: center;
+    font-size: 24px;
+    color: pink;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
