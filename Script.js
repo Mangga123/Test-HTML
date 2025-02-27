@@ -1,30 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
     const boxes = document.querySelectorAll(".box");
-    let index = 0;
+    let currentIndex = 0;
 
-    function showBoxes() {
-        // Sembunyikan semua box dengan efek fade out
-        boxes.forEach((box) => {
-            box.classList.remove("active");
-        });
+    function showNextBox() {
+        boxes.forEach(box => box.classList.remove("active"));
 
-        // Tampilkan 2 box dengan efek fade in
-        boxes[index].classList.add("active");
-        boxes[(index + 1) % boxes.length].classList.add("active");
+        currentIndex = (currentIndex + 1) % boxes.length;
+        let nextIndex = (currentIndex + 1) % boxes.length;
 
-        // Scroll animasi ke box yang sedang tampil
-        document.querySelector(".scroll-container").scrollTo({
-            left: boxes[index].offsetLeft - 50,
-            behavior: "smooth",
-        });
-
-        // Update index untuk iterasi selanjutnya
-        index = (index + 1) % boxes.length;
+        boxes[currentIndex].classList.add("active");
+        boxes[nextIndex].classList.add("active");
     }
 
     // Tampilkan 2 box pertama saat halaman dimuat
-    showBoxes();
+    boxes[0].classList.add("active");
+    boxes[1].classList.add("active");
 
-    // Jalankan efek setiap 3 detik
-    setInterval(showBoxes, 3000);
+    setInterval(showNextBox, 3000); // Ubah setiap 3 detik
 });
