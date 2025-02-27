@@ -2,19 +2,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const boxes = document.querySelectorAll(".box");
     let currentIndex = 0;
 
-    function showNextBox() {
-        boxes.forEach(box => box.classList.remove("active"));
-
-        currentIndex = (currentIndex + 1) % boxes.length;
-        let nextIndex = (currentIndex + 1) % boxes.length;
-
-        boxes[currentIndex].classList.add("active");
-        boxes[nextIndex].classList.add("active");
+    function showBox(index) {
+        boxes.forEach((box, i) => {
+            if (i === index) {
+                box.classList.add("active"); // Fade in
+            } else {
+                box.classList.remove("active"); // Fade out
+            }
+        });
     }
 
-    // Tampilkan 2 box pertama saat halaman dimuat
-    boxes[0].classList.add("active");
-    boxes[1].classList.add("active");
+    function nextBox() {
+        boxes[currentIndex].classList.remove("active"); // Hilangkan kotak sekarang
+        currentIndex = (currentIndex + 1) % boxes.length; // Pindah ke kotak berikutnya
+        boxes[currentIndex].classList.add("active"); // Munculkan kotak baru
+    }
 
-    setInterval(showNextBox, 3000); // Ubah setiap 3 detik
+    showBox(currentIndex); // Tampilkan kotak pertama saat halaman dimuat
+    setInterval(nextBox, 3000); // Ganti kotak setiap 3 detik
 });
