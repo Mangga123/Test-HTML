@@ -11,7 +11,7 @@ body {
 
 .scroll-container {
     width: 100%;
-    max-width: 500px; /* Lebih kecil agar pas di HP */
+    max-width: 500px;
     overflow: hidden;
     white-space: nowrap;
     display: flex;
@@ -22,7 +22,7 @@ body {
 
 .box {
     min-width: 90%;
-    height: 300px; /* Ukuran lebih kecil */
+    height: 300px;
     display: none;
     align-items: center;
     justify-content: center;
@@ -52,6 +52,6 @@ body {
         max-width: 80%;
     }
     .box {
-        height: 250px; /* Lebih kecil lagi untuk HP */
+        height: 250px;
     }
 }
