@@ -1,65 +1,57 @@
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #FC8EAC;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    overflow-y: auto; /* Aktifkan scroll ke bawah */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-.header-text {
-    margin-top: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: pink;
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+#about {
     text-align: center;
 }
 
-/* Container untuk slideshow */
-.slideshow-container {
-    width: 80%;
-    max-width: 400px;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
+#about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }
 
-/* Style untuk gambar dalam slideshow */
-.slide {
+#projects {
+    margin-top: 2rem;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.active {
-    opacity: 1;
-}
-
-/* Container untuk gambar vertikal */
-.scroll-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding-bottom: 20px;
-    margin-top: 20px;
-}
-
-.box {
-    width: 80%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.box img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    bottom: 0;
 }
